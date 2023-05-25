@@ -17,10 +17,7 @@
     attack3 = "Read the Docs";
     healthPointName = "Motivation";
     heroAttack(attackType) {
-      console.log(attackButton);
-      console.log(cpu);
-      console.log(cpu.healthPointLevel);
-      console.log(attackType);
+      console.log("Jev attacked with", attackType);
       if (attackType === jev.attack1) {
         cpu.healthPointLevel -= 5;
       } else if (attackType === jev.attack2) {
@@ -28,6 +25,7 @@
       } else if (attackType === jev.attack3) {
         cpu.healthPointLevel -= 20;
       }
+      console.log("CPU HP", cpu.healthPointLevel);
     }
   }
 
@@ -45,7 +43,7 @@
       const attackPoints = [-5, -10, -20];
 
       jev.healthPointLevel += attackPoints[getRandomIndex()];
-      console.log(jev.healthPointLevel);
+      console.log("Jev HP", jev.healthPointLevel);
     }
   }
 
@@ -56,7 +54,18 @@
     const value = attackButton.target.value;
     console.log({ value });
     jev.heroAttack(value);
-    setTimeout(() => cpu.villainAttack(), 2000);
+    setTimeout(() => {
+      cpu.villainAttack();
+      if (cpu.healthPointLevel <= 0) {
+        alert("You win ! You got rid of all the bugs");
+        return;
+      } else if (jev.healthPointLevel <= 0) {
+        alert("CPU wins- time to take a break");
+        return;
+      }
+    }, 2000);
+
+    //cpu.villainAttack();
   });
 
   //   while (jev.healthPointLevel > 0 && cpu.healthPointLevel > 0) {
