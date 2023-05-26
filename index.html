@@ -7,11 +7,19 @@
     <title>game</title>
   </head>
   <body>
+    <select name="player" id="select-player-type">
+      <option value="student">Student</option>
+      <option value="jr-dev">Jr. Dev</option>
+      <option value="sr-dv">Sr. Dev</option>
+    </select>
+    <button id="btn" onclick="getPlayerType()">Submit</button>
+    <span class="output"></span>
+
     <button type="button" class="button" value="Prettier">Prettier</button>
     <button type="button" class="button" value="Debugger">Debugger</button>
     <button type="button" class="button" value="Read the Docs">
       Read the Docs
     </button>
-    <script src="script.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
   </body>
 </html>
