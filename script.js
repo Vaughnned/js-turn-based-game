@@ -48,6 +48,19 @@
     }
   }
 
+  // function getPlayerType() {
+  //   selectPlayer = document.querySelector("#select-player-type");
+  //   output = selectPlayer.options[selectPlayer.selectedIndex].value;
+  //   document.querySelector(".output").textContent = output;
+  //   console.log(output);
+  // }
+
+  const btn = document.querySelector("#btn");
+  const sb = document.querySelector("#select-player-type");
+  btn.onclick = (event) => {
+    event.preventDefault();
+    alert(sb.value);
+  };
   const jev = new Hero();
   const cpu = new Villain();
 
@@ -67,8 +80,6 @@
           return;
         }
       }, 2000);
-
-      //cpu.villainAttack();
     });
   });
 
@@ -77,3 +88,10 @@
   //   }
   //
 })();
+
+// function getPlayerType() {
+//   selectPlayer = document.querySelector("#select-player-type");
+//   output = selectPlayer.options[selectPlayer.selectedIndex].value;
+//   document.querySelector(".output").textContent = output;
+//   console.log(output);
+// }
