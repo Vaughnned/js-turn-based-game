@@ -1,5 +1,6 @@
 (function () {
-  const attackButton = document.querySelector("#button");
+  const attackButtons = document.querySelectorAll(".button");
+  console.log(attackButtons);
 
   class Player {
     name = "";
@@ -50,22 +51,25 @@
   const jev = new Hero();
   const cpu = new Villain();
 
-  attackButton.addEventListener("click", function (attackButton) {
-    const value = attackButton.target.value;
-    console.log({ value });
-    jev.heroAttack(value);
-    setTimeout(() => {
-      cpu.villainAttack();
-      if (cpu.healthPointLevel <= 0) {
-        alert("You win ! You got rid of all the bugs");
-        return;
-      } else if (jev.healthPointLevel <= 0) {
-        alert("CPU wins- time to take a break");
-        return;
-      }
-    }, 2000);
+  attackButtons.forEach((btn) => {
+    btn.addEventListener("click", function (btn) {
+      //attackButton) {
+      const value = btn.target.value; //attackButton
+      console.log({ value });
+      jev.heroAttack(value);
+      setTimeout(() => {
+        cpu.villainAttack();
+        if (cpu.healthPointLevel <= 0) {
+          alert("You win ! You got rid of all the bugs");
+          return;
+        } else if (jev.healthPointLevel <= 0) {
+          alert("CPU wins- time to take a break");
+          return;
+        }
+      }, 2000);
 
-    //cpu.villainAttack();
+      //cpu.villainAttack();
+    });
   });
 
   //   while (jev.healthPointLevel > 0 && cpu.healthPointLevel > 0) {
