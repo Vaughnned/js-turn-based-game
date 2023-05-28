@@ -9,30 +9,37 @@
   </head>
   <body>
     <main class="container">
-      <img
-        id="#player-img"
-        src="images/sr-dev.png"
-        alt="A stressed-out Senior Developer"
-      />
-      <select name="player" id="select-player-type">
-        <option value="student">Student</option>
-        <option value="jr-dev">Jr. Dev</option>
-        <option value="sr-dv">Sr. Dev</option>
-      </select>
-      <button id="btn" onclick="getPlayerType()">Submit</button>
-      <span class="output"></span>
+      <aside class="player-select">
+        <select name="player" id="select-player-type">
+          <option value="student">Student</option>
+          <option value="jr-dev">Jr. Dev</option>
+          <option value="sr-dv">Sr. Dev</option>
+        </select>
+        <button id="btn" onclick="getPlayerType()">Submit</button>
+        <span class="output"></span>
+      </aside>
 
-      <button type="button" class="button" value="Prettier">Prettier</button>
-      <button type="button" class="button" value="Debugger">Debugger</button>
-      <button type="button" class="button" value="Read the Docs">
-        Read the Docs
-      </button>
       <div class="displayBoxes">
-        <section class="playerScreen"></section>
+        <section class="playerDisplay">
+          <img
+            id="player-img"
+            src="images/sr-dev.png"
+            alt="A stressed-out Senior Developer"
+          />
+          <button type="button" class="button" value="Prettier">
+            Prettier
+          </button>
+          <button type="button" class="button" value="Debugger">
+            Debugger
+          </button>
+          <button type="button" class="button" value="Read the Docs">
+            Read the Docs
+          </button>
+        </section>
 
         <section class="attackDisplay"></section>
 
-        <section class="playerScreen"></section>
+        <section class="playerDisplay"></section>
       </div>
     </main>
     <script type="text/javascript" src="./script.js"></script>
