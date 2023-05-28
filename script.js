@@ -30,8 +30,8 @@
     }
   }
 
-  function getRandomIndex() {
-    return Math.floor(Math.random() * 3);
+  function getRandomIndex(arrLength) {
+    return Math.floor(Math.random() * arrLength);
   }
 
   class Villain extends Player {
@@ -48,12 +48,15 @@
     }
   }
 
-  // function getPlayerType() {
-  //   selectPlayer = document.querySelector("#select-player-type");
-  //   output = selectPlayer.options[selectPlayer.selectedIndex].value;
-  //   document.querySelector(".output").textContent = output;
-  //   console.log(output);
-  // }
+
+  function selectEnemyType() {
+    const enemyType = ["syntax errors", "bugs", "imposter syndrome"];
+    randomEnemy = enemyType[getRandomIndex(enemyType.length)];
+    return randomEnemy;
+  }
+  console.log(selectEnemyType());
+
+
 
   const btn = document.querySelector("#btn");
   const sb = document.querySelector("#select-player-type");
