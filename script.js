@@ -48,12 +48,15 @@
     }
   }
 
-  // function getPlayerType() {
-  //   selectPlayer = document.querySelector("#select-player-type");
-  //   output = selectPlayer.options[selectPlayer.selectedIndex].value;
-  //   document.querySelector(".output").textContent = output;
-  //   console.log(output);
-  // }
+
+  function selectEnemyType() {
+    const enemyType = ["syntax errors", "bugs", "imposter syndrome"];
+    randomEnemy = enemyType[getRandomIndex(enemyType.length)];
+    return randomEnemy;
+  }
+  console.log(selectEnemyType());
+
+
 
   const playerImg = document.querySelector("#player-img");
   let playerType = "test";
