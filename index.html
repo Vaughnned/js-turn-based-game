@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>game</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <img
@@ -20,16 +21,37 @@
     </select>
     <button id="selectBtn" onclick="getPlayerType()">Submit</button>
     <span class="output"></span>
+    <main class="container">
+      <img
+        id="#player-img"
+        src="images/sr-dev.png"
+        alt="A stressed-out Senior Developer"
+      />
+      <select name="player" id="select-player-type">
+        <option value="student">Student</option>
+        <option value="jr-dev">Jr. Dev</option>
+        <option value="sr-dv">Sr. Dev</option>
+      </select>
+      <button id="btn" onclick="getPlayerType()">Submit</button>
+      <span class="output"></span>
 
-    <button type="button" class="attackButton" value="Prettier">
-      Prettier
-    </button>
-    <button type="button" class="attackButton" value="Debugger">
-      Debugger
-    </button>
-    <button type="button" class="attackButton" value="Read the Docs">
-      Read the Docs
-    </button>
+      <button type="button" class="attackButton" value="Prettier">
+        Prettier
+      </button>
+      <button type="button" class="attackButton" value="Debugger">
+        Debugger
+      </button>
+      <button type="button" class="attackButton" value="Read the Docs">
+        Read the Docs
+      </button>
+      <div class="displayBoxes">
+        <section class="playerScreen"></section>
+
+        <section class="attackDisplay"></section>
+
+        <section class="playerScreen"></section>
+      </div>
+    </main>
     <script type="text/javascript" src="./script.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 (function () {
-  const attackButtons = document.querySelectorAll(".button");
+  const attackButtons = document.querySelectorAll(".attackButton");
   console.log(attackButtons);
 
   class Player {
@@ -30,8 +30,8 @@
     }
   }
 
-  function getRandomIndex() {
-    return Math.floor(Math.random() * 3);
+  function getRandomIndex(arrLength) {
+    return Math.floor(Math.random() * arrLength);
   }
 
   class Villain extends Player {
@@ -43,7 +43,7 @@
     villainAttack() {
       const attackPoints = [-5, -10, -20];
 
-      jev.healthPointLevel += attackPoints[getRandomIndex()];
+      jev.healthPointLevel += attackPoints[getRandomIndex(attackPoints.length)];
       console.log("Jev HP", jev.healthPointLevel);
     }
   }
@@ -55,12 +55,25 @@
   //   console.log(output);
   // }
 
-  const btn = document.querySelector("#btn");
-  const sb = document.querySelector("#select-player-type");
-  btn.onclick = (event) => {
+  const playerImg = document.querySelector("#player-img");
+  let playerType = "test";
+
+  const attackBtn = document.querySelector("#selectBtn");
+  const select = document.querySelector("#select-player-type");
+  attackBtn.onclick = (event) => {
     event.preventDefault();
-    alert(sb.value);
+    console.log(select.value);
+    //playerType = selectBtn.target.value; //Sets player type value so we can access it
+    //console.table(playerType);
+    if (select.value === "student") {
+      playerImg.src = "images/student.png";
+    } else if (select.value === "jr-dev") {
+      playerImg.src = "images/jr-dev.jpeg";
+    } else if (select.value === "sr-dev") {
+      playerImg.src = "images/sr-dev.png";
+    }
   };
+
   const jev = new Hero();
   const cpu = new Villain();
 
