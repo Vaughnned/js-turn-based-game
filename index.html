@@ -8,7 +8,7 @@
   </head>
   <body>
     <img
-      id="#player-img"
+      id="player-img"
       src="images/sr-dev.png"
       alt="A stressed-out Senior Developer"
     />
@@ -16,14 +16,18 @@
     <select name="player" id="select-player-type">
       <option value="student">Student</option>
       <option value="jr-dev">Jr. Dev</option>
-      <option value="sr-dv">Sr. Dev</option>
+      <option value="sr-dev">Sr. Dev</option>
     </select>
-    <button id="btn" onclick="getPlayerType()">Submit</button>
+    <button id="selectBtn" onclick="getPlayerType()">Submit</button>
     <span class="output"></span>
 
-    <button type="button" class="button" value="Prettier">Prettier</button>
-    <button type="button" class="button" value="Debugger">Debugger</button>
-    <button type="button" class="button" value="Read the Docs">
+    <button type="button" class="attackButton" value="Prettier">
+      Prettier
+    </button>
+    <button type="button" class="attackButton" value="Debugger">
+      Debugger
+    </button>
+    <button type="button" class="attackButton" value="Read the Docs">
       Read the Docs
     </button>
     <script type="text/javascript" src="./script.js"></script>
