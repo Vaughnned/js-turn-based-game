@@ -47,19 +47,16 @@
       console.log("Jev HP", jev.healthPointLevel);
     }
   }
-
-
+  const enemyType = ["syntax errors", "bugs", "imposter syndrome"];
+  let randomEnemy = "";
   function selectEnemyType() {
-    const enemyType = ["syntax errors", "bugs", "imposter syndrome"];
     randomEnemy = enemyType[getRandomIndex(enemyType.length)];
     return randomEnemy;
   }
   console.log(selectEnemyType());
 
-
-
   const playerImg = document.querySelector("#player-img");
-  let playerType = "test";
+  const enemyImg = document.querySelector("#enemy-img");
 
   const attackBtn = document.querySelector("#selectBtn");
   const select = document.querySelector("#select-player-type");
@@ -75,6 +72,20 @@
     } else if (select.value === "sr-dev") {
       playerImg.src = "images/sr-dev.png";
     }
+
+    selectEnemyType();
+    if (randomEnemy === "syntax errors") {
+      enemyImg.src = "images/syntax-error.png";
+      console.log("syntax img should appear");
+    } else if (randomEnemy === "bugs") {
+      enemyImg.src = "images/matrix-bug.png";
+      console.log("bug img should appear");
+    } else if (randomEnemy === "imposter syndrome") {
+      enemyImg.src = "images/imposter-syndrome.jpeg";
+      console.log("face img should appear");
+    }
+
+    return randomEnemy;
   };
 
   const jev = new Hero();
