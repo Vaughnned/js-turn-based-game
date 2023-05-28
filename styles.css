@@ -1,0 +1,24 @@
+.container {
+  border: solid 1px red;
+  height: 100vh;
+  width: 100vw;
+}
+
+.displayBoxes {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.playerScreen {
+  border: solid 1px red;
+  height: 30%;
+  width: 30%;
+}
+
+.attackDisplay {
+  border: solid 1px red;
+  height: 20%;
+  width: 20%;
+}
