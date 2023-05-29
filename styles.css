@@ -1,3 +1,10 @@
+body {
+  background: url("https://wallpaperaccess.com/full/796832.jpg");
+  opacity: 0.9;
+  height: 100%;
+  width: 100%;
+}
+
 .container {
   border: solid 1px red;
   height: 100vh;
@@ -5,6 +12,8 @@
 }
 
 .displayBoxes {
+  position: relative;
+  top: 25%;
   height: 100%;
   width: 100%;
   display: flex;
@@ -13,7 +22,8 @@
 
 .playerDisplay {
   text-align: center;
-  border: solid 1px red;
+  border: solid 10px grey;
+  background-color: black;
   height: 30%;
   width: 30%;
 }
@@ -29,7 +39,17 @@
   width: 100%;
 }
 
+#enemy-img {
+  height: 80%;
+  width: 100%;
+}
+
 .button {
+  height: 30px;
+  width: 30%;
+}
+
+.attackButton {
   height: 30px;
   width: 30%;
 }
