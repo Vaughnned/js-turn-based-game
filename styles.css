@@ -29,9 +29,34 @@ body {
 }
 
 .attackDisplay {
-  border: solid 1px red;
+  background-color: black;
+  color: rgb(9, 199, 9);
+  border-top: solid 20px white;
   height: 20%;
   width: 20%;
+  position: relative;
+}
+
+.attackDisplay::before {
+  content: "";
+  background-color: red;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: -17.5px;
+  left: 2.5px;
+}
+
+.attackDisplay::after {
+  content: "";
+  background-color: orange;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: -17.5px;
+  left: 20px;
 }
 
 #player-img {
