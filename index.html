@@ -4,16 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>game</title>
+    <title>C.A.F.O</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="container">
       <aside class="player-select">
+        <h1>Choose Your Fighter:</h1>
         <select name="player" id="select-player-type">
           <option value="student">Student</option>
           <option value="jr-dev">Jr. Dev</option>
-          <option value="sr-dv">Sr. Dev</option>
+          <option value="sr-dev">Sr. Dev</option>
         </select>
         <button id="selectBtn" onclick="getPlayerType()">Submit</button>
         <span class="output"></span>
@@ -21,31 +22,14 @@
 
       <div class="displayBoxes">
         <section class="playerDisplay">
+          <section class="namePlate">
+            Jev: <span id="jevLevel">Sr. Developer</span>
+          </section>
           <img
             id="player-img"
             src="images/sr-dev.png"
             alt="A stressed-out Senior Developer"
-          />
-          <button type="button" class="button" value="Prettier">
-            Prettier
-          </button>
-          <button type="button" class="button" value="Debugger">
-            Debugger
-          </button>
-          <button type="button" class="button" value="Read the Docs">
-            Read the Docs
-          </button>
-        </section>
-
-        <section class="attackDisplay"></section>
-
-        <section class="playerDisplay">
-          <img
-            id="enemy-img"
-            src="images/imposter-syndrome.jpeg"
-            alt="An frowny face with x's over the eyes"
-          />
-          <button type="attackButton" class="attackButton" value="Prettier">
+          /><button type="attackButton" class="attackButton" value="Prettier">
             Prettier
           </button>
           <button type="attackButton" class="attackButton" value="Debugger">
@@ -58,6 +42,42 @@
           >
             Read the Docs
           </button>
+          <div class="health">
+            <h2>HP:</h2>
+            <div class="hpBarBorder"><div id="jevHP" class="hpBar"></div></div>
+          </div>
+        </section>
+
+        <section class="attackDisplay">
+          You are a weary Software Developer named Jev. Choose your player level
+          above.
+          <br />
+          Armed with three debugging tools, which one of all will prove the most
+          fatal against your enemy?
+          <br />
+          It's time to Click Around and Find Out.
+        </section>
+
+        <section class="playerDisplay">
+          <div id="cpuName" class="namePlate">Imposter Syndrome</div>
+          <img
+            id="enemy-img"
+            src="images/imposter-syndrome.jpeg"
+            alt="An frowny face with x's over the eyes"
+          />
+          <button type="button" class="button" value="Prettier">
+            Missing semicolon
+          </button>
+          <button type="button" class="button" value="Debugger">
+            404 Error
+          </button>
+          <button type="button" class="button" value="Read the Docs">
+            Angry console!
+          </button>
+          <div class="health">
+            <h2>Error Lvl:</h2>
+            <div class="hpBarBorder"><div id="cpuHP" class="hpBar"></div></div>
+          </div>
         </section>
       </div>
     </main>

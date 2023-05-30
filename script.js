@@ -3,13 +3,15 @@
   const attackDisplay = document.querySelector(".attackDisplay");
   const playerHPBar = document.querySelector(".hpBar");
 
+  const maxHP = 150;
+
   class Player {
     name = "";
     attack1 = "";
     attack2 = "";
     attack3 = "";
     healthPointName = "";
-    healthPointLevel = 50;
+    healthPointLevel = maxHP;
   }
 
   class Hero extends Player {
@@ -58,11 +60,18 @@
   }
   console.log(selectEnemyType());
 
+  function calcPercent() {
+    return jev.healthPointLevel / maxHP;
+  }
+
   const playerImg = document.querySelector("#player-img");
   const enemyImg = document.querySelector("#enemy-img");
 
   const attackBtn = document.querySelector("#selectBtn");
   const select = document.querySelector("#select-player-type");
+
+  const jevLevel = document.querySelector("#jevLevel");
+  const cpuName = document.querySelector("#cpuName");
   attackBtn.onclick = (event) => {
     event.preventDefault();
     console.log(select.value);
@@ -70,22 +79,25 @@
     //console.table(playerType);
     if (select.value === "student") {
       playerImg.src = "images/student.png";
+      jevLevel.innerText = "Student";
     } else if (select.value === "jr-dev") {
       playerImg.src = "images/jr-dev.jpeg";
+      jevLevel.innerText = "Jr. Developer";
     } else if (select.value === "sr-dev") {
       playerImg.src = "images/sr-dev.png";
+      jevLevel.innerText = "Sr. Developer";
     }
 
     selectEnemyType();
     if (randomEnemy === "syntax errors") {
       enemyImg.src = "images/syntax-error.png";
-      console.log("syntax img should appear");
+      cpuName.innerText = "Syntax Errors";
     } else if (randomEnemy === "bugs") {
       enemyImg.src = "images/matrix-bug.png";
-      console.log("bug img should appear");
+      cpuName.innerText = "Bugs";
     } else if (randomEnemy === "imposter syndrome") {
       enemyImg.src = "images/imposter-syndrome.jpeg";
-      console.log("face img should appear");
+      cpuName.innerText = "Imposter Syndrome";
     }
 
     return randomEnemy;
@@ -102,6 +114,7 @@
       jev.heroAttack(value);
       setTimeout(() => {
         cpu.villainAttack();
+        playerHPBar.style.width = calcPercent() * 100 + "%";
         if (cpu.healthPointLevel <= 0) {
           alert("You win ! You got rid of all the bugs");
           return;
