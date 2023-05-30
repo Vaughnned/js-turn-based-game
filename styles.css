@@ -1,21 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
 
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
-  background: url("https://wallpaperaccess.com/full/796832.jpg");
+  background: url("https://wallpaperaccess.com/full/796832.jpg") no-repeat;
   opacity: 0.9;
   min-height: 100vh;
+  height: 100%;
   min-width: 100vw;
+  width: 100%;
   font-family: "Roboto Mono", monospace;
+  margin: 0;
 }
 
 .container {
-  height: 100vh;
+  max-height: 100%;
+  height: 50vh;
   width: 100vw;
+  justify-content: center;
 }
 
 .player-select {
   text-align: center;
   background-color: black;
+  font-family: myFirstFont;
+  font-size: 25px;
   color: green;
   padding: 10px 0;
   width: 100;
@@ -34,16 +46,22 @@ body {
   text-align: center;
   border: solid 10px grey;
   background-color: black;
-  height: 30%;
+  min-height: 35%;
+  height: fit-content;
   width: 30%;
 }
 
 .namePlate {
-  background-color: aliceblue;
+  font-family: myFirstFont;
+  font-size: 20px;
+  background-color: black;
+  color: rgb(9, 199, 9);
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .health {
-  margin-top: 10%;
+  margin: 7%;
   display: flex;
   color: white;
   height: 20px;
@@ -52,7 +70,9 @@ body {
 }
 
 h2 {
-  margin: 0;
+  font-family: myFirstFont;
+  font-size: 40px;
+  margin: 0px 10px 0px 0px;
 }
 
 .hpBarBorder {
@@ -64,18 +84,20 @@ h2 {
 
 .hpBar {
   background-color: green;
-
   width: 100%;
   height: 20px;
 }
 
 .attackDisplay {
   background-color: black;
+  font-family: myFirstFont;
+  font-size: 20px;
   color: rgb(9, 199, 9);
-  border-top: solid 20px white;
-  height: 20%;
+  border-top: solid 20px lightgray;
+  height: fit-content;
   width: 20%;
   position: relative;
+  padding: 5px;
 }
 
 .attackDisplay::before {
@@ -101,21 +123,36 @@ h2 {
 }
 
 #player-img {
-  height: 80%;
+  max-height: 280px;
+  min-height: 280px;
   width: 100%;
 }
 
 #enemy-img {
-  height: 80%;
+  max-height: 280px;
+  min-height: 280px;
   width: 100%;
 }
 
 .button {
-  height: 30px;
-  width: 30%;
+  height: 50px;
+  width: 35%;
+  padding: 10px;
+  margin: 5px;
+  border: solid 5px silver;
+  font-weight: bolder;
 }
 
 .attackButton {
-  height: 30px;
-  width: 30%;
+  height: 10%;
+  width: 32%;
+  padding: 10px;
+  margin: 5px;
+  border: solid 5px silver;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(fonts/connection-iii-font/ConnectionIii-Rj3W.otf);
 }
