@@ -1,7 +1,6 @@
 (function () {
   const attackButtons = document.querySelectorAll(".attackButton");
   const attackDisplay = document.querySelector(".attackDisplay");
-  const playerHPBar = document.querySelector(".hpBar");
 
   const maxHP = 150;
 
@@ -60,10 +59,6 @@
   }
   console.log(selectEnemyType());
 
-  function calcPercent() {
-    return jev.healthPointLevel / maxHP;
-  }
-
   const playerImg = document.querySelector("#player-img");
   const enemyImg = document.querySelector("#enemy-img");
 
@@ -103,18 +98,24 @@
     return randomEnemy;
   };
 
+  const playerHPBar = document.querySelector("#jevHP");
+  const cpuHPBar = document.querySelector("#cpuHP");
+
   const jev = new Hero();
   const cpu = new Villain();
-
+  function calcPercent(player) {
+    return player.healthPointLevel / maxHP;
+  }
   attackButtons.forEach((btn) => {
     btn.addEventListener("click", function (btn) {
       //attackButton) {
       const value = btn.target.value; //attackButton
       console.log({ value });
       jev.heroAttack(value);
+      cpuHPBar.style.width = calcPercent(cpu) * 100 + "%";
       setTimeout(() => {
         cpu.villainAttack();
-        playerHPBar.style.width = calcPercent() * 100 + "%";
+        playerHPBar.style.width = calcPercent(jev) * 100 + "%";
         if (cpu.healthPointLevel <= 0) {
           alert("You win ! You got rid of all the bugs");
           return;
