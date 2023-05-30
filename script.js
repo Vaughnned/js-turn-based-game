@@ -1,6 +1,7 @@
 (function () {
   const attackButtons = document.querySelectorAll(".attackButton");
-  console.log(attackButtons);
+  const attackDisplay = document.querySelector(".attackDisplay");
+  const playerHPBar = document.querySelector(".hpBar");
 
   class Player {
     name = "";
@@ -18,6 +19,7 @@
     attack3 = "Read the Docs";
     healthPointName = "Motivation";
     heroAttack(attackType) {
+      attackDisplay.innerText = `JEV ATTACKED WITH ${attackType.toUpperCase()}`;
       console.log("Jev attacked with", attackType);
       if (attackType === jev.attack1) {
         cpu.healthPointLevel -= 5;
@@ -44,6 +46,7 @@
       const attackPoints = [-5, -10, -20];
 
       jev.healthPointLevel += attackPoints[getRandomIndex(attackPoints.length)];
+      attackDisplay.innerText = `CPU STRIKES BACK !`;
       console.log("Jev HP", jev.healthPointLevel);
     }
   }
